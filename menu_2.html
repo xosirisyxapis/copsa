@@ -7,21 +7,21 @@
       </a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="horarios.html" class="menu_icon_link" title="Horarios">
+      <li class="{{getTabClass('horarios')}}"><a href="horarios.html" class="menu_icon_link" title="Horarios">
       	<span class="glyphicon glyphicon-hourglass menu_icon"></span></a></li>
-      <li><a href="reservas.html" class="menu_icon_link" title="Reservas">
+      <li class="{{getTabClass('reservas')}}"><a href="reservas.html" class="menu_icon_link" title="Reservas">
       	<span class="glyphicon glyphicon-calendar menu_icon"></span></a></li>
-      <li><a href="seguimiento.html" class="menu_icon_link" title="Seguimiento">
+      <li class="{{getTabClass('seguimiento')}}"><a href="seguimiento.html" class="menu_icon_link" title="Seguimiento">
       	<span class="glyphicon glyphicon-map-marker menu_icon"></span></a></li>
-      <li><a href="paradas" class="menu_icon_link" title="Paradas">
+      <li class="{{getTabClass('paradas')}}"><a href="paradas" class="menu_icon_link" title="Paradas">
       	<span class="glyphicon glyphicon-road menu_icon"></span></a></li>
     </ul>
     <ul class="nav navbar-nav" style="float: right;">
-      <li class="active"><a href="#">Empresa</a></li>
-      <li><a href="#">Agencias</a></li>
-      <li><a href="#">Tarifa</a></li>
-      <li><a href="#">Preguntas frecuentes</a></li>
-      <li><a href="#">Coches</a></li>
+      <li class="{{getTabClass('empresa')}}"><a href="empresa.html">Empresa</a></li>
+      <li class="{{getTabClass('agencias')}}"><a href="agencias.html">Agencias</a></li>
+      <li class="{{getTabClass('tarifa')}}"><a href="tarifa.html">Tarifa</a></li>
+      <li class="{{getTabClass('faq')}}"><a href="faq.html">Preguntas frecuentes</a></li>
+      <li class="{{getTabClass('coches')}}"><a href="coches.html">Coches</a></li>
       <li><a href="#">Ingrese</a></li>
     </ul>
   </div>
