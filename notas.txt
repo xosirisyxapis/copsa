@@ -1,0 +1,22 @@
+instalar nodejs:
+https://nodejs.org/es/download/
+
+Ir a la carpeta raiz con una consola de comandos:
+npm init
+(dar enter hasta que termine)
+
+npm install http-server
+
+para levatnar el servicio:
+node node_modules\http-server\bin\http-server
+
+se puede acceder en localhost:8080/copsa
+
+<form name="myForm" ng-submit="salvarNombre()">
+	<label>
+       Nombre:
+       <input type="text" name="userName" ng-model="miNombre">
+    </label>
+    <input type="submit" id="submit" value="Salvar" />
+</form>
+{{getStoreNombre()}}<br/>

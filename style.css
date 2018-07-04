@@ -1,0 +1,66 @@
+
+a.menu_icon_link:link {
+	padding: 5px;
+	padding-top: 7px;
+	padding-bottom: 3px;
+}
+.menu_icon {
+	font-size: 35px;
+}
+.page_box {
+	height:100vh;
+}
+.home_banner{
+	width: 100%;
+	background: green;
+	background-image: url("img/bus_wide_4.jpg");
+	background-size:cover;
+	height:45%;
+}
+.home_icons{
+	width: 100%;
+	background: #fff7ed;
+	height:45%;
+}
+.center_icon {
+    line-height: 50vh;
+    height: 100%;
+    text-align: center;
+}
+.home_icon_size {
+	line-height: 20px;
+	font-size: 17vh;
+}
+.icon_text {
+	color: #4d3200;
+}
+.icon_text:hover {
+	color: white;
+}
+.home_text_size {
+	font-size: 5vh;
+}
+.fast_1 {
+	background-image: url("img/fast_1.jpg");
+	background-size:cover;
+	border: solid 11px #fff7ed;
+	border-radius: 20px;
+}
+.fast_2 {
+	background-image: url("img/fast_2.jpg");
+	background-size:cover;
+	border: solid 11px #fff7ed;
+	border-radius: 20px;
+}
+.fast_3 {
+	background-image: url("img/fast_3.jpg");
+	background-size:cover;
+	border: solid 11px #fff7ed;
+	border-radius: 20px;
+}
+.fast_4 {
+	background-image: url("img/fast_4.jpg");
+	background-size:cover;
+	border: solid 11px #fff7ed;
+	border-radius: 20px;
+}
