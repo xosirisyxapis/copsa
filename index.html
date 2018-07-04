@@ -39,6 +39,35 @@
 		</div> 
 	</div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="login" role="dialog">
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Ingresar</h4>
+				</div>
+				<div class="modal-body">
+					<form name="myForm" ng-submit="ingresar()">
+						<label>
+					       Nombre:
+					       <input class="form-control" type="text" name="userName" ng-model="nombre">
+					    </label><br/>
+					    <label>
+					       Contraseña:
+					       <input class="form-control" type="password" name="userPass">
+					    </label>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" ng-click="ingresar()">Aceptar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
 	<script src="resources/jquery-2.0.3.min.js"></script>
 	<script src="resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 	<script src="resources/angular-1.5.8.min.js"></script>

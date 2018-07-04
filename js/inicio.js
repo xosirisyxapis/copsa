@@ -6,9 +6,25 @@ copsaApp.controller("inicioCtrl", function ($scope, $localStorage) {
 		return $localStorage.nombre;
     }
 
-    $scope.salvarNombre = function () {
-        console.log($scope.miNombre);
-        $localStorage.nombre = $scope.miNombre;
+    $scope.ingresar = function () {
+        console.log($scope.nombre);
+        $localStorage.nombre = $scope.nombre;
+    }
+
+    $scope.getUserButton = function () {
+        if ($localStorage.nombre) {
+        	return $localStorage.nombre
+        } else {
+        	return 'Ingresar';
+        }
+    }
+
+    $scope.getUserButton = function () {
+        if ($localStorage.nombre) {
+        	return $localStorage.nombre
+        } else {
+        	return 'Ingresar';
+        }
     }
 
 });

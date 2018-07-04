@@ -16,4 +16,12 @@ copsaApp.controller("cochesCtrl", function ($scope, $localStorage) {
     	}
     }
 
+    $scope.getUserButton = function () {
+        if ($localStorage.nombre) {
+            return $localStorage.nombre
+        } else {
+            return 'Ingresar';
+        }
+    }
+
 });
