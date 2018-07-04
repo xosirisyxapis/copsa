@@ -1,4 +1,6 @@
-
+.navbar {
+	border-radius: 0;
+}
 a.menu_icon_link:link {
 	padding: 5px;
 	padding-top: 7px;
@@ -68,4 +70,11 @@ a.menu_icon_link:link {
 	height: 100%;
 	width: 100%;
 	object-fit: contain;
+}
+.full_height {
+	height: 100%;
+}
+.page_body {
+	background: #80552e; 
+	height: calc(100% - 52px);
 }
