@@ -64,3 +64,8 @@ a.menu_icon_link:link {
 	border: solid 11px #fff7ed;
 	border-radius: 20px;
 }
+.icon_size {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
