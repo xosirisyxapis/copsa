@@ -1,4 +1,4 @@
-<!doctype html>  
+<!doctype html>
 <html lang="es" ng-app="motor" class="full_height">
 <head>  
 	<meta charset="UTF-8">
@@ -8,9 +8,50 @@
 	<title>Copsa - Horarios</title>
 	<link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
 </head>  
-<body ng-controller="horariosCtrl">
+<body ng-controller="horariosCtrl" class="page_body">
 	<div ng-include="'menu_2.html'"></div>
-	<h1>Horarios</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-offset-2 col-sm-8" style="background: white;">
+				<div style="text-align: center;">
+					<h1>Horarios</h1>
+				</div>
+				<div style="padding: 10px;">
+					<label>Filtro:</label>
+					<input class="form-control" type="text" ng-model="f_hora">
+				</div>
+				<table class="table table-bordered table-hover table-responsive" style="width: 100%;">
+					<thead style="font-weight: bold;">
+						<tr>
+							<td>Montevideo</td>
+							<td>Carrasco</td>
+							<td>Solís</td>
+							<td>Piriápolis</td>
+							<td>Portezuelo</td>
+							<td>Maldonado</td>
+							<td>P.Este</td>
+							<td>J.Ignacio</td>
+							<td>Garzón</td>
+						</tr>
+					</thead>
+					<tr ng-repeat="h in horarios | filter: {'mont':f_hora}">
+						<td>{{ h.mont }}</td>
+						<td>{{ h.carr }}</td>
+						<td>{{ h.solis }}</td>
+						<td>{{ h.piria }}</td>
+						<td>{{ h.portez }}</td>
+						<td>{{ h.mald }}</td>
+						<td>{{ h.peste }}</td>
+						<td>{{ h.jigna }}</td>
+						<td>{{ h.garzon }}</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
 
 	<script src="resources/jquery-2.0.3.min.js"></script>
 	<script src="resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
