@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" style="margin: 0;">
+<nav class="navbar navbar-default menu-color" style="margin: 0;">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -6,33 +6,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="index.html">
-        <img class="navbar-brand" src="img/copsa_logo.png" alt="logo"> 
-        <div class="navbar-brand">Copsa</div>
+      <a href="/copsa">
+        <img class="navbar-brand" src="img/copsa_logo_sin_fondo.png" alt="logo" style="height: 57px;">
       </a>
     </div>
     <ul class="nav navbar-nav visible-lg visible-md visible-sm">
-      <li class="{{getTabClass('horarios')}}"><a href="horarios.html" class="menu_icon_link" title="Horarios">
+      <li class="{{getTabClass('horarios')}}"><span class="glyphicon glyphicon-hourglass menu_icon" style="visibility: hidden;"></span></li>
+      <li class="{{getTabClass('horarios')}}"><a href="horarios.html" class="menu_icon_link menu-text-color" title="Horarios">
       	<span class="glyphicon glyphicon-hourglass menu_icon"></span></a></li>
-      <li class="{{getTabClass('reservas')}}"><a href="reservas.html" class="menu_icon_link" title="Reservas">
+      <li class="{{getTabClass('reservas')}}"><a href="reservas.html" class="menu_icon_link menu-text-color" title="Reservas">
       	<span class="glyphicon glyphicon-calendar menu_icon"></span></a></li>
-      <li class="{{getTabClass('seguimiento')}}"><a href="seguimiento.html" class="menu_icon_link" title="Seguimiento">
+      <li class="{{getTabClass('seguimiento')}}"><a href="seguimiento.html" class="menu_icon_link menu-text-color" title="Seguimiento">
       	<span class="glyphicon glyphicon-map-marker menu_icon"></span></a></li>
-      <li class="{{getTabClass('paradas')}}"><a href="paradas" class="menu_icon_link" title="Paradas">
+      <li class="{{getTabClass('paradas')}}"><a href="paradas" class="menu_icon_link menu-text-color" title="Paradas">
       	<span class="glyphicon glyphicon-road menu_icon"></span></a></li>
     </ul>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav" style="float: right;">
-        <li class="{{getTabClass('horarios')}} visible-xs"><a href="horarios.html">Horarios</a></li>
-        <li class="{{getTabClass('reservas')}} visible-xs"><a href="reservas.html">Reservas</a></li>
-        <li class="{{getTabClass('seguimiento')}} visible-xs"><a href="seguimiento.html">Seguimientos</a></li>
-        <li class="{{getTabClass('paradas')}} visible-xs"><a href="paradas.html">Paradas</a></li>
-        <li class="{{getTabClass('empresa')}}"><a href="empresa.html">Empresa</a></li>
-        <li class="{{getTabClass('agencias')}}"><a href="agencias.html">Agencias</a></li>
-        <li class="{{getTabClass('tarifa')}}"><a href="tarifa.html">Tarifa</a></li>
-        <li class="{{getTabClass('faq')}}"><a href="faq.html">Preguntas frecuentes</a></li>
-        <li class="{{getTabClass('coches')}}"><a href="coches.html">Coches</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#login">{{getUserButton()}}</a></li>
+      <ul class="nav navbar-nav" style="float: right;padding-top: 9px;margin-top: -4px;">
+        <li><a class="menu-text-color" href="/copsa" title="Inicio" style="padding: 10px 10px 9px;">
+        <span class="glyphicon glyphicon-home" style="font-size: 25px;"></span></a></li>
+        <li class="{{getTabClass('horarios')}} visible-xs"><a class="menu-text-color" href="horarios.html">Horarios</a></li>
+        <li class="{{getTabClass('reservas')}} visible-xs"><a class="menu-text-color" href="reservas.html">Reservas</a></li>
+        <li class="{{getTabClass('seguimiento')}} visible-xs"><a class="menu-text-color" href="seguimiento.html">Seguimientos</a></li>
+        <li class="{{getTabClass('paradas')}} visible-xs"><a class="menu-text-color" href="paradas.html">Paradas</a></li>
+        <li class="{{getTabClass('empresa')}}"><a class="menu-text-color" href="empresa.html">Empresa</a></li>
+        <li class="{{getTabClass('agencias')}}"><a class="menu-text-color" href="agencias.html">Agencias</a></li>
+        <li class="{{getTabClass('tarifa')}}"><a class="menu-text-color" href="tarifa.html">Tarifa</a></li>
+        <li class="{{getTabClass('faq')}}"><a class="menu-text-color" href="faq.html">Preguntas frecuentes</a></li>
+        <li class="{{getTabClass('coches')}}"><a class="menu-text-color" href="coches.html">Coches</a></li>
+        <li><a class="menu-text-color" href="#" data-toggle="modal" data-target="#login" style="padding: 10px 10px 9px;"><span class="glyphicon glyphicon-user" style="font-size: 25px;"></span><span style="vertical-align: super;padding-left: 5px;">{{getUserButton()}}</span></a></li>
       </ul>
     </div>
   </div>

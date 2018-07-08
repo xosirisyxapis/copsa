@@ -24,4 +24,15 @@ copsaApp.controller("reservasCtrl", function ($scope, $localStorage) {
         }
     }
 
+
+  $scope.open1 = function() {
+    $scope.popup1.opened = true;
+  };
+
+  $scope.format = 'dd/MM/yyyy';
+
+  $scope.popup1 = {
+    opened: false
+  };
+
 });

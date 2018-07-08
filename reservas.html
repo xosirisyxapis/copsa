@@ -1,22 +1,95 @@
 <!doctype html>  
-<html lang="es" ng-app="motor" class="full_height">
+<html lang="es" ng-app="motor" class="full_height" style="height: 100% - 50px);">
 <head>  
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="resources/bootstrap-3.3.6-dist/css/bootstrap.min.css" />
+	<link href="resources/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" href="style.css" />
 	<title>Copsa - Resrevas</title>
 	<link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
 </head>  
-<body ng-controller="reservasCtrl">
+<body ng-controller="reservasCtrl" class="page_body full_height">
 	<div ng-include="'menu_2.html'"></div>
-	<h1>Reservas</h1>
+	
+	<div class="container full_height">
+		<div class="row full_height">
+			<div class="col-sm-offset-2 col-sm-8 full_height content">
+				<h1>Reservas</h1>
+
+				<div>
+					<a href="#" data-toggle="modal" data-target="#edit_reserva">
+						<span class="glyphicon glyphicon-plus nueva_reserva"></span>
+					</a>
+					<table class="table table-bordered table-hover table-responsive" style="width: 100%;">
+						<thead style="font-weight: bold;">
+							<tr>
+								<td>Fecha</td>
+								<td>Hora</td>
+								<td>Salida</td>
+								<td>Llegada</td>
+								<td>Pasajes</td>
+							</tr>
+						</thead>
+						<tr ng-repeat="r in reservas">
+							<td>{{ r.fecha }}</td>
+							<td>{{ r.hora }}</td>
+							<td>{{ r.salida }}</td>
+							<td>{{ r.llegada }}</td>
+							<td>{{ r.pasajes }}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="edit_reserva" role="dialog">
+		<div class="modal-dialog modal-md">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Reserva</h4>
+				</div>
+				<div class="modal-body">
+					<form name="myForm" ng-submit="salvar()">
+						<label>
+					       Fecha:
+					       <p class="input-group">
+						       	<input type="text" class="form-control" uib-datepicker-popup="{{format}}" 
+						       		ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" 
+						       		ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+						        <span class="input-group-btn">
+						        	<button type="button" class="btn btn-default" ng-click="open1()">
+						        		<i class="glyphicon glyphicon-calendar"></i>
+						        	</button>
+						        </span>
+					    	</p>
+					    </label><br/>
+					    <label>
+					       Hora:
+					       <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+					    </label>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal" ng-click="ingresar()">Aceptar</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
 
 	<script src="resources/jquery-2.0.3.min.js"></script>
 	<script src="resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="resources/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="resources/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 	<script src="resources/angular-1.5.8.min.js"></script>
 	<script src="resources/scrollglue.js"></script>
 	<script src="resources/ngStorage.min.js"></script>
+	<script src="resources/ui-bootstrap-tpls-2.5.0.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/reservas.js"></script>
 </body>  

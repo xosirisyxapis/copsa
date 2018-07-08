@@ -2,26 +2,26 @@
 	border-radius: 0;
 }
 a.menu_icon_link:link {
-	padding: 5px;
-	padding-top: 7px;
-	padding-bottom: 3px;
+	padding: 10px 15px 7px;
 }
 .menu_icon {
-	font-size: 35px;
+	font-size: 30px;
+	padding: 5px 2px;
 }
 .page_box {
 	height:100vh;
+	background: #4d3200;
 }
 .home_banner{
 	width: 100%;
 	background: green;
-	background-image: url("img/bus_wide_4.jpg");
+	background-image: url("img/bus_wide_4_des.jpg");
 	background-size:cover;
 	height:45%;
 }
 .home_icons{
 	width: 100%;
-	background: #fff7ed;
+	background: #4d3200;
 	height:45%;
 }
 .center_icon {
@@ -45,25 +45,25 @@ a.menu_icon_link:link {
 .fast_1 {
 	background-image: url("img/fast_1.jpg");
 	background-size:cover;
-	border: solid 11px #fff7ed;
+	border: solid 11px #4d3200;
 	border-radius: 20px;
 }
 .fast_2 {
 	background-image: url("img/fast_2.jpg");
 	background-size:cover;
-	border: solid 11px #fff7ed;
+	border: solid 11px #4d3200;
 	border-radius: 20px;
 }
 .fast_3 {
 	background-image: url("img/fast_3.jpg");
 	background-size:cover;
-	border: solid 11px #fff7ed;
+	border: solid 11px #4d3200;
 	border-radius: 20px;
 }
 .fast_4 {
 	background-image: url("img/fast_4.jpg");
 	background-size:cover;
-	border: solid 11px #fff7ed;
+	border: solid 11px #4d3200;
 	border-radius: 20px;
 }
 .icon_size {
@@ -75,6 +75,66 @@ a.menu_icon_link:link {
 	height: 100%;
 }
 .page_body {
-	background: #80552e; 
-	height: calc(100% - 50px);
+	height: calc(100% - 52px);
+	background: repeating-linear-gradient(
+	  #80552e,
+	  #623710 50px,
+	  #80552e 100px,
+	  #80552e 200px
+	);
+	background: #80552e;
+}
+.content {
+	background: white;
+}
+.nueva_reserva {
+	float: right;
+	padding: 3px;
+	font-size: 35px;
+	color: rgb(51, 51, 51);
+}
+
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }
+
+.divider-vertical {
+	height: 50px;
+	margin: 0 9px;
+	border-left: 1px solid #F2F2F2;
+	border-right: 1px solid #FFF;
+}
+.menu-color {
+	background: #ae1b1f;
+}
+a.menu-text-color {
+	color: #ffe8c2 !important;
+}
+a.menu-text-color:hover {
+	color: white !important;
+}
+.img_filter {
+	height: 100%;
+	background: radial-gradient(circle, #ffffffb3 20%, transparent 75%);
+}
+.img_rollover {
+	background-image: url("img/icon_03_rollover.png");
+}
+/* tabla */
+
+tr:nth-child(odd) {
+    background-color: #ceaca0;
+}
+tr:nth-child(even) {
+    background-color: #dcad7366;
+}
+.navbar-default .navbar-nav > .active > a {
+	background: #8b1b1b;
 }
