@@ -75,7 +75,7 @@ a.menu_icon_link:link {
 	height: 100%;
 }
 .page_body {
-	height: calc(100% - 52px);
+	height: calc(100% - 59px);
 	background: repeating-linear-gradient(
 	  #80552e,
 	  #623710 50px,
@@ -136,5 +136,8 @@ tr:nth-child(even) {
     background-color: #dcad7366;
 }
 .navbar-default .navbar-nav > .active > a {
+	background: #8b1b1b;
+}
+.navbar-default .navbar-nav > .active > a:hover {
 	background: #8b1b1b;
 }
