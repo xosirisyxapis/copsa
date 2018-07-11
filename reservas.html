@@ -23,22 +23,24 @@
 					<a href="#" data-toggle="modal" data-target="#edit_reserva">
 						<span class="glyphicon glyphicon-plus nueva_reserva"></span>
 					</a>
-					<table class="table table-bordered table-hover table-responsive" style="width: 100%;">
+					<table class="table table-bordered table-hover table-responsive table-color" style="width: 100%;">
 						<thead style="font-weight: bold;">
-							<tr>
+						<tr style="background: #be0612;color: wheat;">
 								<td>Fecha</td>
 								<td>Hora</td>
 								<td>Salida</td>
 								<td>Llegada</td>
 								<td>Pasajes</td>
+								<td></td>
 							</tr>
 						</thead>
-						<tr ng-repeat="r in reservas">
+						<tr ng-repeat="r in reservas" class="{{r.style}}">
 							<td>{{ r.fecha }}</td>
 							<td>{{ r.hora }}</td>
-							<td>{{ r.salida }}</td>
-							<td>{{ r.llegada }}</td>
+							<td>{{ r.origen }}</td>
+							<td>{{ r.destino }}</td>
 							<td>{{ r.pasajes }}</td>
+							<td style="text-align: center;"><span class="glyphicon {{ r.icon }} pointer"></span></td>
 						</tr>
 					</table>
 				</div>
@@ -57,23 +59,144 @@
 				</div>
 				<div class="modal-body">
 					<form name="myForm" ng-submit="salvar()">
-						<label>
-					       Fecha:
-					       <p class="input-group">
-						       	<input type="text" class="form-control" uib-datepicker-popup="{{format}}" 
-						       		ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" 
-						       		ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-						        <span class="input-group-btn">
-						        	<button type="button" class="btn btn-default" ng-click="open1()">
-						        		<i class="glyphicon glyphicon-calendar"></i>
-						        	</button>
-						        </span>
-					    	</p>
-					    </label><br/>
-					    <label>
-					       Hora:
-					       <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
-					    </label>
+						<div >
+							<label style="padding-right: 136px;">
+					       		Origen:
+					       		<select class="form-control">
+					       			<option></option>
+								    <option>Montevideo</option>
+								    <option>Maldonado</option>
+								</select>
+					    	</label>
+					    	<label>
+					       		Destino:
+					       		<select class="form-control">
+					       			<option></option>
+								    <option>Montevideo</option>
+								    <option>Maldonado</option>
+								</select>
+					    	</label>
+						</div>
+						<div>
+							<label>
+						       Fecha:
+						       <p class="input-group" style="padding-right: 25px;">
+							       	<input type="text" class="form-control" uib-datepicker-popup="{{format}}" 
+							       		ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" 
+							       		ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+							        <span class="input-group-btn">
+							        	<button type="button" class="btn btn-default" ng-click="open1()">
+							        		<i class="glyphicon glyphicon-calendar"></i>
+							        	</button>
+							        </span>
+						    	</p>
+						    </label>
+						    <label>
+						       Hora:
+						       <p class="input-group">
+							       <select class="form-control" ng-model="res_hora">
+							       		<option></option>
+									    <option>16:30</option>
+									    <option>17:00</option>
+									    <option>17:30</option>
+									    <option>18:00</option>
+									    <option>18:30</option>
+									</select>
+								</p>
+						    </label>
+					    	<label style="padding-left: 60px;">
+						       Pasajeros:
+						       <p class="input-group">
+							       <select class="form-control">
+							       		<option></option>
+									    <option>1</option>
+									    <option>2</option>
+									    <option>3</option>
+									    <option>4</option>
+									</select>
+								</p>
+						    </label>
+					    </div>
+					    <div ng-show="res_hora" class="table-show animate-show-hide">
+					    	<table class="table table-bordered table-hover table-responsive table-color">
+					    		<thead style="font-weight: bold;">
+									<tr style="background: #be0612;color: wheat;">
+										<td></td>
+										<td>Salida</td>
+										<td>Destino</td>
+										<td>Nº coche</td>
+										<td>Llegada</td>
+									</tr>
+								</thead>
+					    		<tr>
+					    			<td style="text-align: center;"><input type="radio" name="optradio"></td>
+									<td>16:00</td>
+									<td>Punta del Este</td>
+									<td>1</td>
+									<td>18:15</td>
+								</tr>
+								<tr>
+					    			<td style="text-align: center;"><input type="radio" name="optradio"></td>
+									<td>16:00</td>
+									<td>Punta del Este</td>
+									<td>1</td>
+									<td>18:15</td>
+								</tr>
+								<tr>
+					    			<td style="text-align: center;"><input type="radio" name="optradio"></td>
+									<td>16:00</td>
+									<td>Punta del Este</td>
+									<td>1</td>
+									<td>18:15</td>
+								</tr>
+					    	</table>
+					    </div>
+					    <div style="padding: 5px;">
+					    	<hr>
+					    	<label>
+						       Asciende en:
+						       <p class="input-group">
+							       <select class="form-control">
+							       		<option></option>
+									    <option>parada 1</option>
+									    <option>parada 2</option>
+									    <option>parada 3</option>
+									    <option>parada 4</option>
+									</select>
+								</p>
+						    </label>
+					    </div>
+					    <div>
+					    	<hr>
+					    	<div class="bus">
+					    		<div style="padding-left: 20px;">
+						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9]" class="seat" type="checkbox" class="seat" value="">
+					    		</div>
+					    		<div style="padding-left: 20px;">
+						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9]" class="seat" type="checkbox" class="seat" value="">
+					    		</div>
+					    		<div style="padding-left: 20px;padding-top: 25px">
+						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9, 10]" class="seat" type="checkbox" class="seat" value="">
+					    		</div>
+					    		<div style="padding-left: 20px;">
+						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9, 10]" class="seat" type="checkbox" class="seat" value="">
+					    		</div>
+					    	</div>
+					    </div>
+					    <div style="padding: 5px;">
+					    	<hr>
+					    	<label>
+						       Tipo pago:
+						       <p class="input-group">
+							       <select class="form-control">
+							       		<option></option>
+									    <option>Reserva</option>
+									    <option>Pago online</option>
+									    <option>Ábitab</option>
+									</select>
+								</p>
+						    </label>
+					    </div>
 					</form>
 				</div>
 				<div class="modal-footer">
@@ -84,6 +207,7 @@
 		</div>
 	</div>
 
+
 	<script src="resources/jquery-2.0.3.min.js"></script>
 	<script src="resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="resources/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
@@ -92,7 +216,13 @@
 	<script src="resources/scrollglue.js"></script>
 	<script src="resources/ngStorage.min.js"></script>
 	<script src="resources/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script src="resources/angular-animate.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/reservas.js"></script>
-</body>  
+</body>
+	<!--script type="text/javascript">
+	    $(window).on('load',function(){
+	        $('#edit_reserva').modal('show');
+	    });
+	</script-->	
 </html>

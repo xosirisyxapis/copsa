@@ -1,2 +1,2 @@
-var copsaApp = angular.module('motor', ['ngStorage','ui.bootstrap']);
+var copsaApp = angular.module('motor', ['ngStorage','ui.bootstrap', 'ngAnimate']);
 //,'ui.bootstrap'

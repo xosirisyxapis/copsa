@@ -12,11 +12,10 @@ node node_modules\http-server\bin\http-server
 
 se puede acceder en localhost:8080/copsa
 
-<form name="myForm" ng-submit="salvarNombre()">
-	<label>
-       Nombre:
-       <input type="text" name="userName" ng-model="miNombre">
-    </label>
-    <input type="submit" id="submit" value="Salvar" />
-</form>
-{{getStoreNombre()}}<br/>
+-----------------------------------------------
+TODO:
+- reservas programada: definir abm
+- filtros de horarios:
+	- salida (lugar de salida, aunque solo funcione para montevideo)
+	- hora - combo para elegir hora de salida
+- agregar contenido a páginas vacías: empresa, tarifas, etc.

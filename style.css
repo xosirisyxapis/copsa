@@ -14,7 +14,6 @@ a.menu_icon_link:link {
 }
 .home_banner{
 	width: 100%;
-	background: green;
 	background-image: url("img/bus_wide_4_des.jpg");
 	background-size:cover;
 	height:45%;
@@ -129,15 +128,53 @@ a.menu-text-color:hover {
 }
 /* tabla */
 
-tr:nth-child(odd) {
+.table-disabled {
+    background-color: #d7d7d7 !important;
+}
+.table-color tr:nth-child(even) {
     background-color: #ceaca0;
 }
-tr:nth-child(even) {
+.table-color tr:nth-child(odd) {
     background-color: #dcad7366;
 }
+/* */
 .navbar-default .navbar-nav > .active > a {
 	background: #8b1b1b;
 }
 .navbar-default .navbar-nav > .active > a:hover {
 	background: #8b1b1b;
+}
+a:focus {
+  outline: none;
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+  height: 0px;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.table-show {
+  opacity: 1;
+  height: 150px;
+  overflow: hidden;
+}
+
+.bus {
+	width: 440px;
+	height: 160px;
+	border: solid 4px black;
+	margin: auto;
+	border-radius: 10px 25px 25px 10px;
+	padding: 20px
+}
+.seat {
+	margin-right: 20px !important
+}
+.pointer {
+	cursor: pointer;
 }

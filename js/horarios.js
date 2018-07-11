@@ -24,6 +24,11 @@ copsaApp.controller("horariosCtrl", function ($scope, $localStorage) {
         }
     }
 
+    $scope.startsWith = function (actual, expected) {
+       var lowerStr = (actual + "").toLowerCase();
+       return lowerStr.indexOf(expected.toLowerCase()) === 0;
+   }
+
     $scope.horarios = [
  {
    "mont": "04:45:00",
