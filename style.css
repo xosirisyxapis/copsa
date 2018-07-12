@@ -137,6 +137,12 @@ a.menu-text-color:hover {
 .table-color tr:nth-child(odd) {
     background-color: #dcad7366;
 }
+.table-res tr {
+    background-color: #dcad7366;
+}
+.table-small td {
+    padding: 4px !important;
+}
 /* */
 .navbar-default .navbar-nav > .active > a {
 	background: #8b1b1b;
@@ -160,21 +166,64 @@ a:focus {
 
 .table-show {
   opacity: 1;
-  height: 150px;
+  height: 140px;
+  overflow: hidden;
+}
+.bus-show {
+  opacity: 1;
+  height: 153px;
+  overflow: hidden;
+}
+.pay-show {
+  opacity: 1;
+  height: 65px;
+  overflow: hidden;
+}
+.ok-show {
+  opacity: 1;
+  height: 50px;
   overflow: hidden;
 }
 
 .bus {
 	width: 440px;
-	height: 160px;
+	height: 135px;
 	border: solid 4px black;
 	margin: auto;
 	border-radius: 10px 25px 25px 10px;
-	padding: 20px
+	padding: 8px;
+	padding-left: 24px;
 }
 .seat {
 	margin-right: 20px !important
 }
 .pointer {
 	cursor: pointer;
+}
+
+.modal-header {
+	background: #be0612;
+	color: wheat;
+}
+.ok-button {
+	color: wheat;
+	background-color: #be0612;
+	border-color: #89030c;
+}
+.ok-button:hover {
+	color: white;
+	background-color: #89030c;
+	border-color: #89030c;
+}
+hr {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.footer {
+	width: 100%;
+	height: 185px;
+	background: #2c1c00;
+	color: wheat;
+	padding: 30px;
 }

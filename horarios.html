@@ -8,18 +8,34 @@
 	<title>Copsa - Horarios</title>
 	<link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
 </head>  
-<body ng-controller="horariosCtrl" class="page_body">
+<body ng-controller="horariosCtrl" class="page_body full_height">
 	<div ng-include="'menu_2.html'"></div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-offset-2 col-sm-8 content">
+	<div class="container full_height">
+		<div class="row full_height">
+			<div class="col-sm-offset-2 col-sm-8 content full_height">
 				<div style="text-align: center;">
 					<h1>Horarios</h1>
 				</div>
-				<div style="padding: 10px;">
-					<label>Filtro:</label>
-					<input class="form-control" type="text" ng-model="search.mont">
+				<div class="form-inline" style="padding: 10px;">
+					<label style="padding-right: 40px;">Lugar:
+						<select class="form-control">
+			       			<option></option>
+						    <option>Montevideo</option>
+						    <option>Carrasco</option>
+						    <option>Solís</option>
+						    <option>Maldonado</option>
+						</select>
+					</label>
+					<label>Horario:
+						<select class="form-control" ng-model="search.mont">
+						    <option></option>
+						    <option>17</option>
+						    <option>18</option>
+						    <option>19</option>
+						    <option>20</option>
+						</select>
+					</label>
 				</div>
 				<table class="table table-bordered table-hover table-responsive table-color" style="width: 100%;">
 					<thead style="font-weight: bold;">

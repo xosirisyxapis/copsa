@@ -20,10 +20,13 @@
 				</div>
 
 				<div>
-					<a href="#" data-toggle="modal" data-target="#edit_reserva">
+					<a href="#" data-toggle="modal" data-target="#edit_reserva" title="Nueva reserva">
 						<span class="glyphicon glyphicon-plus nueva_reserva"></span>
 					</a>
-					<table class="table table-bordered table-hover table-responsive table-color" style="width: 100%;">
+					<a href="#" data-toggle="modal" data-target="#prog_reserva" title="Reservas programadas" style="padding-right: 10px;">
+						<span class="glyphicon glyphicon-calendar nueva_reserva"></span>
+					</a>
+					<table class="table table-bordered table-hover table-responsive table-res" style="width: 100%;">
 						<thead style="font-weight: bold;">
 						<tr style="background: #be0612;color: wheat;">
 								<td>Fecha</td>
@@ -48,165 +51,8 @@
 		</div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="edit_reserva" role="dialog">
-		<div class="modal-dialog modal-md">
-
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Reserva</h4>
-				</div>
-				<div class="modal-body">
-					<form name="myForm" ng-submit="salvar()">
-						<div >
-							<label style="padding-right: 136px;">
-					       		Origen:
-					       		<select class="form-control">
-					       			<option></option>
-								    <option>Montevideo</option>
-								    <option>Maldonado</option>
-								</select>
-					    	</label>
-					    	<label>
-					       		Destino:
-					       		<select class="form-control">
-					       			<option></option>
-								    <option>Montevideo</option>
-								    <option>Maldonado</option>
-								</select>
-					    	</label>
-						</div>
-						<div>
-							<label>
-						       Fecha:
-						       <p class="input-group" style="padding-right: 25px;">
-							       	<input type="text" class="form-control" uib-datepicker-popup="{{format}}" 
-							       		ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" 
-							       		ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-							        <span class="input-group-btn">
-							        	<button type="button" class="btn btn-default" ng-click="open1()">
-							        		<i class="glyphicon glyphicon-calendar"></i>
-							        	</button>
-							        </span>
-						    	</p>
-						    </label>
-						    <label>
-						       Hora:
-						       <p class="input-group">
-							       <select class="form-control" ng-model="res_hora">
-							       		<option></option>
-									    <option>16:30</option>
-									    <option>17:00</option>
-									    <option>17:30</option>
-									    <option>18:00</option>
-									    <option>18:30</option>
-									</select>
-								</p>
-						    </label>
-					    	<label style="padding-left: 60px;">
-						       Pasajeros:
-						       <p class="input-group">
-							       <select class="form-control">
-							       		<option></option>
-									    <option>1</option>
-									    <option>2</option>
-									    <option>3</option>
-									    <option>4</option>
-									</select>
-								</p>
-						    </label>
-					    </div>
-					    <div ng-show="res_hora" class="table-show animate-show-hide">
-					    	<table class="table table-bordered table-hover table-responsive table-color">
-					    		<thead style="font-weight: bold;">
-									<tr style="background: #be0612;color: wheat;">
-										<td></td>
-										<td>Salida</td>
-										<td>Destino</td>
-										<td>Nº coche</td>
-										<td>Llegada</td>
-									</tr>
-								</thead>
-					    		<tr>
-					    			<td style="text-align: center;"><input type="radio" name="optradio"></td>
-									<td>16:00</td>
-									<td>Punta del Este</td>
-									<td>1</td>
-									<td>18:15</td>
-								</tr>
-								<tr>
-					    			<td style="text-align: center;"><input type="radio" name="optradio"></td>
-									<td>16:00</td>
-									<td>Punta del Este</td>
-									<td>1</td>
-									<td>18:15</td>
-								</tr>
-								<tr>
-					    			<td style="text-align: center;"><input type="radio" name="optradio"></td>
-									<td>16:00</td>
-									<td>Punta del Este</td>
-									<td>1</td>
-									<td>18:15</td>
-								</tr>
-					    	</table>
-					    </div>
-					    <div style="padding: 5px;">
-					    	<hr>
-					    	<label>
-						       Asciende en:
-						       <p class="input-group">
-							       <select class="form-control">
-							       		<option></option>
-									    <option>parada 1</option>
-									    <option>parada 2</option>
-									    <option>parada 3</option>
-									    <option>parada 4</option>
-									</select>
-								</p>
-						    </label>
-					    </div>
-					    <div>
-					    	<hr>
-					    	<div class="bus">
-					    		<div style="padding-left: 20px;">
-						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9]" class="seat" type="checkbox" class="seat" value="">
-					    		</div>
-					    		<div style="padding-left: 20px;">
-						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9]" class="seat" type="checkbox" class="seat" value="">
-					    		</div>
-					    		<div style="padding-left: 20px;padding-top: 25px">
-						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9, 10]" class="seat" type="checkbox" class="seat" value="">
-					    		</div>
-					    		<div style="padding-left: 20px;">
-						    		<input ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7, 8 ,9, 10]" class="seat" type="checkbox" class="seat" value="">
-					    		</div>
-					    	</div>
-					    </div>
-					    <div style="padding: 5px;">
-					    	<hr>
-					    	<label>
-						       Tipo pago:
-						       <p class="input-group">
-							       <select class="form-control">
-							       		<option></option>
-									    <option>Reserva</option>
-									    <option>Pago online</option>
-									    <option>Ábitab</option>
-									</select>
-								</p>
-						    </label>
-					    </div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-success" data-dismiss="modal" ng-click="ingresar()">Aceptar</button>
-				</div>
-			</div>
-
-		</div>
-	</div>
-
+	<div ng-include="'modal/reserva_abm.html'"></div>
+	<div ng-include="'modal/reserva_prog.html'"></div>
 
 	<script src="resources/jquery-2.0.3.min.js"></script>
 	<script src="resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
@@ -220,9 +66,12 @@
 	<script src="js/main.js"></script>
 	<script src="js/reservas.js"></script>
 </body>
-	<!--script type="text/javascript">
-	    $(window).on('load',function(){
-	        $('#edit_reserva').modal('show');
-	    });
-	</script-->	
+	<script type="text/javascript">
+		setTimeout(function(){
+		    $(window).on('load',function(){
+		        $('#prog_reserva').modal('show');
+		        console.log('lala');
+		    });
+		}, 2000);
+	</script>	
 </html>

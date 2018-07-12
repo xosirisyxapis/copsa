@@ -40,14 +40,31 @@ copsaApp.controller("reservasCtrl", function ($scope, $localStorage) {
     return new Array(num); 
   }
 
+  $scope.selectSeat = function() {
+    $scope.selected_seat = 1;
+    console.log('selectSeat');
+  }
+
+  $scope.addReserva = function() {
+    res = {
+       "fecha": "11/07/2018",
+       "hora": "17:00",
+       "origen": "Montevideo",
+       "destino": "Maldonado",
+       "pasajes": "1",
+       "icon": "glyphicon-edit"  
+    };
+    $scope.reservas.unshift(res);
+  }
+
    $scope.reservas = [
      {
        "fecha": "10/07/2018",
        "hora": "17:30",
-       "origen": "Montevideo",
-       "destino": "Maldonado",
+       "origen": "Maldonado",
+       "destino": "Montevideo",
        "pasajes": "2",
-       "icon": "glyphicon-edit"
+       "style": "table-disabled"
      },
      {
        "fecha": "10/07/2018",
@@ -55,7 +72,7 @@ copsaApp.controller("reservasCtrl", function ($scope, $localStorage) {
        "origen": "Montevideo",
        "destino": "Maldonado",
        "pasajes": "2",
-       "icon": "glyphicon-edit"
+       "style": "table-disabled"
      },
      {
        "fecha": "15/06/2018",
