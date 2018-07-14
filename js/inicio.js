@@ -27,4 +27,15 @@ copsaApp.controller("inicioCtrl", function ($scope, $localStorage) {
         }
     }
 
+    // chat
+    $scope.chatin = '';
+    $scope.chatout = '';
+    for (i = 0; i < 15; i++) {
+        $scope.chatout += "\n";
+    } 
+    $scope.chatLine = function () {
+        $scope.chatout = $scope.chatout.substring(1, $scope.chatout.length);
+        $scope.chatout += $localStorage.nombre + ': ' + $scope.chatin + '\n';
+        $scope.chatin = '';
+    }
 });

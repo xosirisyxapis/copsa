@@ -8,6 +8,18 @@ a.menu_icon_link:link {
 	font-size: 30px;
 	padding: 5px 2px;
 }
+.chat {
+	background-image: url("img/chat.png");
+	height: 35px;
+	width: 35px;
+	background-size: cover;
+}
+.chat:hover {
+	background-image: url("img/chat-white.png");
+	height: 35px;
+	width: 35px;
+	background-size: cover;
+}
 .page_box {
 	height:100vh;
 	background: #4d3200;
@@ -123,6 +135,9 @@ a.menu-text-color:hover {
 	height: 100%;
 	background: radial-gradient(circle, #ffffffb3 20%, transparent 75%);
 }
+.img_filter:hover {
+	background: radial-gradient(circle, #ffffffb3 30%, transparent 75%);
+}
 .img_rollover {
 	background-image: url("img/icon_03_rollover.png");
 }
@@ -204,6 +219,7 @@ a:focus {
 .modal-header {
 	background: #be0612;
 	color: wheat;
+	border-radius: 6px 6px 0 0;
 }
 .ok-button {
 	color: wheat;
